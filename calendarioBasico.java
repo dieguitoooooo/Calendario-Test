@@ -1,7 +1,7 @@
 /**
  * Esta es la clase de CalendarioBasico.
  */
-public class calendarioBasico
+public class CalendarioBasico
 {
     // Campos o atributos de la clase.
     private int dia;
@@ -11,12 +11,12 @@ public class calendarioBasico
     /**
      * Constructor de la clase calendario
      */
-    public calendarioBasico()
+    public CalendarioBasico()
     {
         // Aqui le damos un valor inicial a los campos.
-        dia = 0;
-        mes = 0;
-        anno = 0;
+        dia = 1;
+        mes = 1;
+        anno = 1;
     }
     
     /**
@@ -24,10 +24,25 @@ public class calendarioBasico
      */
     public String obtenerFecha()
     {
-        dia = 01;
-        mes = 01;
-        anno = 01;
-        return dia + "-" + mes + "-" + anno;
+        
+        String devolverFecha= "";
+        String parte1 = dia + "";
+        String parte2 = mes + "";
+        String parte3 = anno + "";
+        if(dia < 10)
+        {
+            parte1 = "0" + parte1;
+        }
+        if(mes < 10)
+        {
+            parte2 = "0" + parte2;
+        }
+        if(anno < 10)
+        {
+            parte3 = "0" + parte3;
+        }
+        devolverFecha = parte1 + "-" + parte2 + "-" + parte3 ;
+        return devolverFecha;        
     }
     
     /**
@@ -53,7 +68,7 @@ public class calendarioBasico
      * Después del 30 pasará al siguiente mes y en el mes 12, 
      * que es el último mes año pasará al siguiente año.
      */     
-    public void anvanzarFecha()
+    public void avanzarFecha()
     {
      if(dia < 31)
      {
